@@ -1,0 +1,139 @@
+* {
+    /* step 6 */
+    font-family: 'Pacifico', cursive;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+	--size: calc(1vw + 1vh); 
+	--transition-behavior: cubic-bezier(.075, .5, 0, 1);
+}
+
+.smooth-wrapper,
+.smooth-content {
+	will-change: transform;
+}
+
+.preview {
+    width: 100%;
+    min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column;
+	position: relative;
+	color: #FDFCF1;
+    overflow: hidden;
+	user-select: none;
+	padding: 10px;
+	z-index: 0;
+}
+
+.preview::after {
+	content: '';
+	width: 100%;
+	height: calc(var(--size) * 10);
+	position: absolute;
+	bottom: calc(var(--size) * -4.5);
+	background: url('../images/preview/ground.png') no-repeat center / cover;
+	z-index: 100;
+}
+
+.preview__pretitle {
+	font-size: calc(var(--size) * 2);
+	text-shadow: calc(var(--size) / 8) calc(var(--size) / 8) calc(var(--size) / 2) currentColor;
+	transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+	transition-property: transform;
+	transition-duration: 750ms;
+	transition-timing-function: var(--transition-behavior);
+	z-index: 1;
+	will-change: transform;
+}
+
+.preview__title {
+	font-size: calc(var(--size) * 3);
+	text-shadow: calc(var(--size) / 8) calc(var(--size) / 8) calc(var(--size) / 2) currentColor;
+	transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+	transition-property: transform;
+	transition-duration: 750ms;
+	transition-timing-function: var(--transition-behavior);
+	z-index: 1;
+	will-change: transform;
+}
+
+.preview__background {
+	width: 100%;
+	min-height: 100vh;
+	position: absolute;
+	transition-property: transform;
+	transition-duration: 750ms;
+	transition-timing-function: var(--transition-behavior);
+	will-change: transform;
+}
+
+.preview__background--main {
+	background: url('../images/preview/main.png') no-repeat center / cover;
+	transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+	z-index: -1;
+}
+
+.preview__background--middle {
+	background: url('../images/preview/middle.png') no-repeat center / cover;
+	transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+}
+
+.preview__background--front {
+	background: url('../images/preview/front.png') no-repeat center / cover;
+	transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
+	z-index: 2;
+}
+
+.soon {
+	width: 100%;
+    height: 100vh;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-flow: column;
+	position: relative;
+	color: #FDFCF1;
+    background: url('../images/soon/dungeon.jpg') no-repeat center / cover;
+    overflow: hidden;
+	user-select: none;
+	padding: 10px;
+}
+
+.soon__title {
+	font-size: calc(var(--size) * 2.5);
+	text-shadow: calc(var(--size) / 10) calc(var(--size) / 10) calc(var(--size) / 2) currentColor;
+	transform: translate3d(0, calc(var(--scrollTop) / 7), 0);
+	transition-property: transform;
+	transition-duration: 750ms;
+	transition-timing-function: var(--transition-behavior);
+	will-change: transform;
+}
+
+.soon__text {
+	width: 80%;
+	font-size: calc(var(--size) * 1.6);
+	text-align: center;
+	text-shadow: calc(var(--size) / 8) calc(var(--size) / 8) calc(var(--size) / 2) currentColor;
+	transform: translate3d(0, calc(var(--scrollTop) / 14), 0);
+	transition-property: transform;
+	transition-duration: 750ms;
+	transition-timing-function: var(--transition-behavior);
+	margin: 0 auto;
+	will-change: transform;
+}
+
+.soon__copyright {
+	font-size: calc(var(--size) * 1.5);
+	text-shadow: calc(var(--size) / 8) calc(var(--size) / 8) calc(var(--size) / 2) currentColor;
+	transform: translate3d(0, calc(var(--scrollTop) / 14), 0);
+	transition-property: transform;
+	transition-duration: 750ms;
+	transition-timing-function: var(--transition-behavior);
+	will-change: transform;
+}
