@@ -1,9 +1,4 @@
-window.addEventListener('scroll', () => {
-	document.documentElement.style.setProperty('--scrollTop', `${this.scrollY}px`);
-})
-
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
-ScrollSmoother.create({
-	wrapper: '.smooth-wrapper',
-	content: '.smooth-content'
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+document.addEventListener('mousemove', (evt) => {
+	document.body.style.cssText = `--move-x: ${evt.clientX}px; --move-y: ${evt.clientY}px`;
 })
